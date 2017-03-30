@@ -1,0 +1,26 @@
+{
+	"name": "modulo",
+	"version": "v0.0.1",
+	"author": "Maximiliano Báez <maximiliano.baez@konecta.com.py>",
+	"description": "Versión optimizada del front-end de Generadores",
+	"private": true,
+	"devDependencies": {
+		"grunt": "~0.4.*",
+		"grunt-banner": "^0.6.0",
+		"grunt-connect-proxy": "^0.2.0",
+		"grunt-contrib-clean": "^1.0.0",
+		"grunt-contrib-concat": "~0.5.0",
+		"grunt-contrib-connect": "^0.11.2",
+		"grunt-contrib-copy": "~0.7.0",
+		"grunt-contrib-cssmin": "~0.12.1",
+		"grunt-contrib-uglify": "^0.6.0",
+		"grunt-contrib-watch": "^0.6.1",
+		"grunt-css-include-combine": "0.0.1",
+		"grunt-open": "^0.2.3",
+		"grunt-remove": "~0.1.0",
+		"grunt-replace": "~0.8.0",
+		"grunt-string-replace": "~1.2.0",
+		"load-grunt-config": "*",
+		"matchdep": "*"
+	}
+}
