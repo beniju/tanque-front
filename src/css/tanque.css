@@ -16,3 +16,23 @@
 .ui-jqgrid .ui-pager-control {
     overflow: hidden !important;
 }
+
+.x-navigation>li.xn-logo>a:first-child{
+    background: #1E222A;
+}
+
+.x-navigation>li.xn-logo>a:first-child:hover{
+    background-color : #74A1D4;
+}
+
+.x-navigation.x-navigation-horizontal {
+    background: #74A1D4;
+}
+
+.x-navigation li.active>a{
+    background : #74A1D4;
+}
+
+.x-navigation li>a:hover{
+    background: #32333C;
+}
