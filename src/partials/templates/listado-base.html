@@ -1,0 +1,85 @@
+<!--
+@autor:     juan benitez
+@mail:      juan.benitez@konecta.com.py
+-->
+<section>
+    <!-- Titulo de la pagina -->
+    <h1>{{baseConfiguration.tituloParametrico}}</h1>
+
+    <div ui-breadcrumb/>
+    <ui-blockui data-ui-blockui-config="uiBlockuiConfig"/>
+
+    <div>
+        <!-- begin alert directive -->
+        <ui-alert alert-service="alertSuccesServices" alert-config="alertSuccessConfig"id="id_alertSuccessBox"></ui-alert>
+        <ui-alert alert-service="alertErrorServices" alert-config="alertErrorConfig" id="id_alertErrorBox"></ui-alert>
+        <ui-alert alert-service="alertWarningServices" alert-config="alertWarningConfig"id="id_alertWarningBox"></ui-alert>
+        <!-- end alert directive -->
+    </div>
+    <div class="{{baseConfiguration.clasePanel}}">
+        <div class="panel panel-default">
+            <!-- begin panel -->
+            <div class="panel-heading">Búsqueda {{baseConfiguration.tituloParametrico}}</div>
+            <div class="panel-body">
+                <!-- form-horizontal contenedor principarl botones inptus-->
+                <form class="form-horizontal" role="form" name="busquedaForm">
+                    <div class="row">
+                        <div class="{{baseConfiguration.claseTransclude}}">
+                            <div ng-transclude></div>
+                        </div>
+                        <!--grupo de Botones buscar limpiar -->
+                        <br/>
+                        <br/>
+                        <div class="{{baseConfiguration.claseBusqueda}}">
+                            <div class="form-horizontal">
+                                <button type="submit" ng-click="buscar()" class="btn btn-custom btn-sm">
+                                    Buscar <i class="icon-search icon-large"></i>
+                                </button>
+                                <button type="submit" ng-click="limpiar()" class="btn btn-warning btn-sm">
+                                    Limpiar <i class="icon-eraser icon-large"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end grupo de Botones buscar limpiar -->
+                </form>
+                <!-- end form-horizontal -->
+            </div>
+            <!-- end panel-body -->
+        </div>
+        <!-- end panel -->
+
+        <!-- begin Grupo de Botones-->
+        <div class="form-inline">
+            <!-- begin boton agregar estandar-->
+            <div class="form-group">
+                <button type="button" class="btn btn-custom btn-sm" ng-click="agregar()">
+                    <i class="icon icon-plus"></i>&nbsp;&nbsp;Agregar
+                </button>
+            </div>
+            <!-- begin boton modificar estandar-->
+            <div class="form-group">
+                <button type="button" class="btn btn-success btn-sm" ng-click="modificar()" ng-disabled="disabled">
+                    <i class="icon icon-pencil"></i>&nbsp;&nbsp;Modificar
+                </button>
+            </div>
+            <!-- begin boton eliminar estandar-->
+            <div class="form-group">
+                <button type="button" class="btn btn-danger btn-sm" ng-click="eliminar()"
+                        ng-disabled="disabled">
+                    <i class="icon icon-trash"></i>&nbsp;&nbsp;Eliminar
+                </button>
+            </div>
+        </div>
+        <!-- end Grupo de Botones-->
+    </div>
+
+    <!-- begin Tabla directive ui-jqgrid-->
+    <div class="{{baseConfiguration.claseGrilla}}">
+        <div class="table-responsive">
+            <table ui-jqgrid="tableParams" class="table" id="jqgrid" ng-dblclick="modificar()"/>
+        </div>
+        <div id="pager"></div>
+    </div>
+    <!-- end Tabla directive ui-jqgrid-->
+</section>

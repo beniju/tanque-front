@@ -1,0 +1,18 @@
+@import url("../../../css/style.css");
+
+.ui-jqgrid,
+.ui-jqgrid .ui-widget .ui-widget-content .ui-corner-all,
+.ui-jqgrid-view,
+.ui-jqgrid-bdiv,
+.ui-state-default .ui-jqgrid-hdiv,
+.ui-state-default .ui-jqgrid-pager .ui-corner-bottom,
+.ui-jqgrid .ui-jqgrid-pager,
+.ui-jqgrid .ui-jqgrid-hdiv,
+.table .ui-jqgrid-btable{
+    width: 100% !important;
+    color: #5E740B;
+}
+
+.ui-jqgrid .ui-pager-control {
+    overflow: hidden !important;
+}
