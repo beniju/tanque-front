@@ -159,7 +159,7 @@ module.exports = function (grunt) {
                     }
                 },
                 proxies: [{
-                    context: '/tanque/',
+                    context: '/digi/tanque-m3',
                     host: 'localhost',
                     port: 8080,
                     headers: {

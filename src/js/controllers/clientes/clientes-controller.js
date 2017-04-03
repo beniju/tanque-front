@@ -8,8 +8,8 @@
  * @author   <a iván gomez</>
  */
 app.controller('ClientesController', [
-    '$scope', 'serviciosjqgrid', '$location', '$dialogs', 'AlertServices', 'Navigator', '$filter', 'BaseServices',
-    function($scope, serviciosjqgrid, $location, $dialogs, alertServices, Navigator, $filter, BaseServices) {
+    '$scope', 'serviciosjqgrid', '$location', '$dialogs', 'AlertServices', 'Navigator', '$filter', 'PruebaServices',
+    function($scope, serviciosjqgrid, $location, $dialogs, alertServices, Navigator, $filter, pruebaServices) {
 
         /**
          *  Objeto  que almacena los filtros obtenidos del formulario
@@ -323,46 +323,28 @@ app.controller('ClientesController', [
          */
         $scope.eliminar = function() {
             $scope.uiBlockuiConfig.bloquear = true;
-            if ($scope.rowSeleccionado) {
-                $scope.selectedRow = $scope.tableParams.getRowData($scope.rowSeleccionado);
-
-                BaseServices.eliminar($scope.selectedRow.id, 'clientes/').then(
+                pruebaServices.getPrueba().then(
                     function(response) {
-                        try {
-                            if (response.status === 200) {
-                                $scope.alertSuccesServices.addSimpleAlert("success", null, "Los datos se eliminaron correctamente");
-
-                                MasterUtils.deleteUndefinedValues($scope.datos);
-                                $scope.tableParams.setGridParam({
-                                    postData: {
-                                        filtros: null
-                                    }
-                                });
-                                $scope.tableParams.reloadGrid();
-
-                            } else {
-                                if (response.data.messages != null) {
-                                    $scope.alertErrorServices.addSimpleAlert("operationFailure", null,
-                                        response.data.messages);
-                                } else {
-                                    $scope.alertErrorServices.addSimpleAlert("operationFailure", null,
-                                        "Ha ocurrido un error inesperado, por favor inténtelo más tarde");
+                        if(response.status == 200){
+                            var datos =JSON.parse(JSON.parse(response.data));
+                            var devices = datos.devices;
+                            for (var i = 0 ; i< devices.length ;i ++){
+                                console.log("Equipo: " + devices[i].name);
+                                var channels = devices[i].channels;
+                                for (var j = 0 ; j< channels.length ;j ++){
+                                    console.log(channels[j]);
                                 }
                             }
-                        } catch (err) {
-                            if (response.data.messages != null) {
 
-                                $scope.alertErrorServices.addSimpleAlert("operationFailure", null,
-                                    response.data.messages);
-                            } else {
-                                $scope.alertErrorServices.addSimpleAlert("operationFailure", null,
-                                    "Ha ocurrido un error inesperado, por favor inténtelo más tarde");
-                            }
+                            $scope.uiBlockuiConfig.bloquear = false;
+                        }else{
+                            $scope.uiBlockuiConfig.bloquear = false;
+                            $scope.alertErrorServices.addSimpleAlert("operationFailure", null,
+                                response.data.messages);
                         }
                     }
                 );
-                $scope.uiBlockuiConfig.bloquear = false;
-            }
+
         };
 
         /**

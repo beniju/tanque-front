@@ -7,7 +7,7 @@
     <h1>{{titulo}}</h1>
 
     <div ui-breadcrumb/>
-    <ui-blockui data-ui-blockui-config="uiBlockuiConfig" />
+    <ui-blockui data-ui-blockui-config="uiBlockuiConfig"/>
 
     <div>
         <!-- begin alert directive -->
@@ -18,9 +18,10 @@
         <!-- end alert directive -->
     </div>
     <div class="col-lg-10 col-lg-offset-1">
-        <div class="panel panel-default">
-            <!-- begin panel -->
-            <div class="panel-heading">Búsqueda</div>
+        <div class="panel panel-success">
+            <div class="panel-heading ui-draggable-handle">
+                <h3 class="panel-title">Búsqueda</h3>
+            </div>
             <div class="panel-body">
                 <!-- form-horizontal contenedor principarl botones inptus-->
                 <form class="form-horizontal" role="form" name="busquedaForm">
@@ -29,25 +30,31 @@
                             <div class="form-group">
                                 <label class="col-lg-4 control-label">Nombre</label>
                                 <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control input-sm" ng-model="datos.nombre" placeholder="" maxlength="200" uppercase focus-me="true" />
+                                    <input type="text" class="form-control" ng-model="datos.nombre" placeholder=""
+                                           maxlength="200" uppercase focus-me="true"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-4 control-label">Apellido</label>
                                 <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control input-sm" ng-model="datos.apellido" placeholder="" maxlength="200" uppercase focus-me="true" />
+                                    <input type="text" class="form-control" ng-model="datos.apellido" placeholder=""
+                                           maxlength="200" uppercase focus-me="true"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-4 control-label">Documento</label>
                                 <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control input-sm" ng-model="datos.documento" placeholder="Documento sin puntos ni espacios" maxlength="10" uppercase focus-me="false" />
+                                    <input type="text" class="form-control" ng-model="datos.documento"
+                                           placeholder="Documento sin puntos ni espacios" maxlength="10" uppercase
+                                           focus-me="false"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-4 control-label">RUC</label>
                                 <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control input-sm" ng-model="datos.ruc" placeholder="RUC sin puntos y con - " maxlength="10" uppercase focus-me="false" />
+                                    <input type="text" class="form-control" ng-model="datos.ruc"
+                                           placeholder="RUC sin puntos y con - " maxlength="10" uppercase
+                                           focus-me="false"/>
                                 </div>
                             </div>
                         </div>
@@ -55,11 +62,11 @@
                         <br/>
                         <div class="col-lg-4">
                             <div class="form-horizontal">
-                                <button type="submit" ng-click="buscar()" class="btn btn-custom btn-sm">
-                                    Buscar <i class="icon-search icon-large"></i>
+                                <button type="submit" ng-click="buscar()" class="btn btn-info">
+                                    Buscar <i class="fa fa-search"></i>
                                 </button>
-                                <button type="submit" ng-click="limpiar()" class="btn btn-warning btn-sm">
-                                    Limpiar <i class="icon-eraser icon-large"></i>
+                                <button type="submit" ng-click="limpiar()" class="btn btn-warning">
+                                    Limpiar <i class="fa fa-eraser"></i>
                                 </button>
                             </div>
                         </div>
@@ -75,20 +82,20 @@
         <div class="form-inline">
             <!-- begin boton agregar estandar-->
             <div class="form-group">
-                <button type="button" class="btn btn-custom btn-sm" ng-click="go('/agregar')">
-                    <i class="icon icon-plus"></i>&nbsp;&nbsp;Agregar
+                <button type="button" class="btn btn-info" ng-click="go('/agregar')">
+                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Agregar
                 </button>
             </div>
             <!-- begin boton modificar estandar-->
             <div class="form-group">
-                <button type="button" class="btn btn-success btn-sm" ng-click="modificar()" ng-disabled="disabled">
-                    <i class="icon icon-pencil"></i>&nbsp;&nbsp;Modificar
+                <button type="button" class="btn btn-success" ng-click="modificar()" ng-disabled="disabled">
+                    <i class="fa fa-pencil"></i>&nbsp;&nbsp;Modificar
                 </button>
             </div>
             <!-- begin boton eliminar estandar-->
             <div class="form-group">
-                <button type="button" class="btn btn-danger btn-sm" ng-click="launch('eliminar')" ng-disabled="disabled">
-                    <i class="icon icon-trash"></i>&nbsp;&nbsp;Eliminar
+                <button type="button" class="btn btn-danger" ng-click="launch('eliminar')" ng-disabled="disabled">
+                    <i class="fa fa-trash-o"></i>&nbsp;&nbsp;Eliminar
                 </button>
             </div>
         </div>
@@ -97,7 +104,7 @@
     <!-- begin Tabla directive ui-jqgrid-->
     <div class="col-lg-10 col-lg-offset-1">
         <div class="table-responsive">
-            <table ui-jqgrid="tableParams" class="table" id="jqgrid" />
+            <table ui-jqgrid="tableParams" class="table" id="jqgrid"/>
         </div>
         <div id="pager"></div>
     </div>
