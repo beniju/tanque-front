@@ -1,7 +1,7 @@
 var modulo = 'tanque';
-var appPath = '/master';
-var masterDir = 'dist/' + modulo;
-var masterTemDir = masterDir + '/tmp';
+var appPath = '/base';
+var baseDir = 'dist/' + modulo;
+var baseTemDir = baseDir + '/tmp';
 
 
 var puerto = 9875;
@@ -18,7 +18,7 @@ module.exports = function (grunt) {
                 files: [{
                     cwd: 'src/css',
                     src: '**/*',
-                    dest: masterDir + '/css',
+                    dest: baseDir + '/css',
                     expand: true
                 }]
             },
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
                 files: [{
                     cwd: 'src/img',
                     src: '**/*',
-                    dest: masterDir + '/img',
+                    dest: baseDir + '/img',
                     expand: true
                 }]
             },
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                 files: [{
                     cwd: 'src/partials',
                     src: '**/*',
-                    dest: masterDir + '/partials',
+                    dest: baseDir + '/partials',
                     expand: true
                 }]
             },
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                 files: [{
                     cwd: 'src/',
                     src: '*.{html,json}',
-                    dest: masterDir,
+                    dest: baseDir,
                     expand: true
                 }]
             },
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
                 files: [{
                     cwd: 'dist/' + modulo,
                     src: ['**'],
-                    dest: '../master/dist/master/module/' + modulo,
+                    dest: '../base/dist/base/module/' + modulo,
                     expand: true
                 }]
             },
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
 
                 ],
 
-                dest: masterTemDir + '/js/main.js'
+                dest: baseTemDir + '/js/main.js'
 
             },
             dist: {
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
 
                 ],
 
-                dest: masterDir + '/js/main.js'
+                dest: baseDir + '/js/main.js'
 
             }
         },
@@ -115,7 +115,7 @@ module.exports = function (grunt) {
                 force: true,
                 trace: true
             },
-            tmpDir: [masterTemDir],
+            tmpDir: [baseTemDir],
             dist: ['dist'],
         },
 
@@ -130,9 +130,9 @@ module.exports = function (grunt) {
             build: {
                 files: [{
                     expand: true,
-                    cwd: masterTemDir + '/js',
+                    cwd: baseTemDir + '/js',
                     src: '**/*js',
-                    dest: masterDir + '/js',
+                    dest: baseDir + '/js',
                     ext: '.js',
                     extDot: 'last'
                 }]

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <!-- META SECTION -->
     <title>Tanque Digi</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <!-- END META SECTION -->
-
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="../../css/theme-default.css"/>
-
-
     <link href="css/tanque.css" rel="stylesheet" media="screen">
     <!-- EOF CSS INCLUDE -->
+    <style>
+        [data-ng-cloak] {
+            display: none;
+        }
+    </style>
 </head>
-<body>
+<body data-ng-cloak>
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
-
     <!-- START PAGE SIDEBAR -->
     <div class="page-sidebar">
         <!-- START X-NAVIGATION -->
@@ -29,7 +28,6 @@
                 <a href="index.html">Tanque Digi</a>
                 <a href="#" class="x-navigation-control"></a>
             </li>
-
             <li class="active">
                 <a href="#"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
             </li>
@@ -37,20 +35,14 @@
                 <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Parametricos</span></a>
                 <ul>
                     <li><a href="#/clientes"><span class="fa fa-user"></span> Clientes</a></li>
-                    <li><a href="ui-tour.html"><span class="fa fa-random"></span> Tour</a></li>
                 </ul>
-            </li>
-            <li>
-                <a href="maps.html"><span class="fa fa-map-marker"></span> <span class="xn-text">Maps</span></a>
             </li>
         </ul>
         <!-- END X-NAVIGATION -->
     </div>
     <!-- END PAGE SIDEBAR -->
-
     <!-- PAGE CONTENT -->
-    <div class="page-content">
-
+    <div class="page-content" style="">
         <!-- START X-NAVIGATION VERTICAL -->
         <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
             <!-- TOGGLE NAVIGATION -->
@@ -58,38 +50,28 @@
                 <a class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
             </li>
             <!-- END TOGGLE NAVIGATION -->
-
             <!-- SIGN OUT -->
             <li class="xn-icon-button pull-right">
-                <a ng-click="logout()" class="mb-control" data-box="#mb-signout"><span
-                        class="fa fa-sign-out"></span></a>
+                <a ng-click="logout()" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
             </li>
             <!-- END SIGN OUT -->
-
         </ul>
         <!-- END X-NAVIGATION VERTICAL -->
-
-        <div id="page-content-wrapper" class="container">
+        <div id="page-content-wrapper" class="page-content-wrap">
             <!-- inicio del contenedor de los partials -->
             <div data-ng-view id="main-container" class="col-lg-12"></div>
             <!-- fin del contenedor de los partials -->
         </div>
-
     </div>
     <!-- END PAGE CONTENT -->
 </div>
 <!-- END PAGE CONTAINER -->
-
 <!-- START SCRIPTS -->
-
 <script src="../../js/third-party-libs.js"></script>
 <script src="../../js/own-libs.js"></script>
 <script src="../../js/common-components.js"></script>
 <script type="text/javascript" src="../../js/plugins.js"></script>
 <script type="text/javascript" src="../../js/actions.js"></script>
 <script src="js/main.js"></script>
-
 <!-- END SCRIPTS -->
-
 </body>
-</html>

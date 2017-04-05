@@ -62,8 +62,8 @@ app.config(['$routeProvider', '$controllerProvider',
                 return promise.then(function(response) {
                     return response;
                 }, function(response) {
-                    MasterUtils.redirectError(response.status);
-                    response = MasterUtils.processResponse(response);
+                    BaseUtils.redirectError(response.status);
+                    response = BaseUtils.processResponse(response);
                     return $q.reject(response);
                 });
             };

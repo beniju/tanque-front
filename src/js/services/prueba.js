@@ -7,7 +7,7 @@ app.factory('PruebaServices', ['$http',
     function ($http) {
         var PruebaServices = {};
         PruebaServices.getServiceRestUrl = function () {
-            return MasterUrl.serviceRest;
+            return BaseUrl.serviceRest;
         };
 
         PruebaServices.getPrueba = function () {

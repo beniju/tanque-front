@@ -1,7 +1,3 @@
-<!--
-@autor:     iván gomez
-@mail:      ivan.gomez@konecta.com.py
--->
 <section>
     <!-- Titulo de la pagina -->
     <h1>{{titulo}}</h1>
@@ -11,78 +7,49 @@
 
     <div>
         <!-- begin alert directive -->
-        <ui-alert alert-service="alertSuccesServices" alert-config="alertSuccessConfig" id="id_alertSuccessBox">
-        </ui-alert>
-
+        <ui-alert alert-service="alertSuccesServices" alert-config="alertSuccessConfig" id="id_alertSuccessBox"></ui-alert>
         <ui-alert alert-service="alertErrorServices" alert-config="alertErrorConfig" id="id_alertErrorBox"></ui-alert>
         <!-- end alert directive -->
     </div>
     <div class="col-lg-10 col-lg-offset-1">
-        <div class="panel panel-info">
-            <div class="panel-heading ui-draggable-handle">
+        <!-- START PRIMARY PANEL -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
                 <h3 class="panel-title">Búsqueda</h3>
             </div>
             <div class="panel-body">
-                <!-- form-horizontal contenedor principarl botones inptus-->
                 <form class="form-horizontal" role="form" name="busquedaForm">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="form-group">
-                                <label class="col-lg-4 control-label">Nombre</label>
-                                <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control" ng-model="datos.nombre" placeholder=""
-                                           maxlength="200" uppercase focus-me="true"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-4 control-label">Apellido</label>
-                                <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control" ng-model="datos.apellido" placeholder=""
-                                           maxlength="200" uppercase focus-me="true"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-4 control-label">Documento</label>
-                                <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control" ng-model="datos.documento"
-                                           placeholder="Documento sin puntos ni espacios" maxlength="10" uppercase
-                                           focus-me="false"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-4 control-label">RUC</label>
-                                <div class="input-group col-lg-8">
-                                    <input type="text" class="form-control" ng-model="datos.ruc"
-                                           placeholder="RUC sin puntos y con - " maxlength="10" uppercase
-                                           focus-me="false"/>
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <br/>
-                        <div class="col-lg-4">
-                            <div class="form-horizontal">
-                                <button type="submit" ng-click="buscar()" class="btn btn-info">
-                                    Buscar <i class="fa fa-search"></i>
-                                </button>
-                                <button type="submit" ng-click="limpiar()" class="btn btn-warning">
-                                    Limpiar <i class="fa fa-eraser"></i>
-                                </button>
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Text Field</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control"/>
                             </div>
                         </div>
                     </div>
-                    <!-- end grupo de Botones buscar limpiar -->
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Text Field</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
                 </form>
-                <!-- end form-horizontal -->
             </div>
-            <!-- end panel-body -->
+            <div class="panel-footer">
+                <button class="btn btn-default pull-right">Limpiar</button>
+                <button class="btn btn-primary pull-right">Buscar</button>
+            </div>
         </div>
-        <!-- end panel -->
+        <!-- END PRIMARY PANEL -->
         <!-- begin Grupo de Botones-->
         <div class="form-inline">
             <!-- begin boton agregar estandar-->
             <div class="form-group">
-                <button type="button" class="btn btn-info" ng-click="go('/agregar')">
+                <button type="button" class="btn btn-info" ng-click="buscar()">
                     <i class="fa fa-plus"></i>&nbsp;&nbsp;Agregar
                 </button>
             </div>
@@ -100,7 +67,6 @@
             </div>
         </div>
     </div>
-
     <!-- begin Tabla directive ui-jqgrid-->
     <div class="col-lg-10 col-lg-offset-1">
         <div class="table-responsive">

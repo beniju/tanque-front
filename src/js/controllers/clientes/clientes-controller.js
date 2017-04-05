@@ -112,7 +112,7 @@ app.controller('ClientesController', [
          * @type {String}
          * @public
          */
-        var urlAccess = MasterUrl.serviceRest + 'clientes/';
+        var urlAccess = BaseUrl.serviceRest + 'clientes/';
         console.log(urlAccess);
 
         /**
@@ -230,7 +230,7 @@ app.controller('ClientesController', [
             hidegrid: false,
             altRows: true,
             loadError: function(xhr, st, err) {
-                var response = MasterJqgridUtils.processResponseJqgrid(xhr, $scope.tableParams);
+                var response = BaseJqgridUtils.processResponseJqgrid(xhr, $scope.tableParams);
                 if (xhr.status !== 404) {
                     $scope.alertErrorServices.addSimpleAlert("operationError", null, response.data.messages);
                     $scope.$apply();
@@ -355,7 +355,7 @@ app.controller('ClientesController', [
          */
         $scope.limpiar = function() {
 
-            MasterUtils.deleteValues($scope.datos);
+            BaseUtils.deleteValues($scope.datos);
 
             $scope.tableParams.setGridParam({
                 datatype: "local"
@@ -372,24 +372,7 @@ app.controller('ClientesController', [
          * @public
          */
         $scope.buscar = function() {
-            $scope.disabled = true;
-            MasterUtils.deleteUndefinedValues($scope.datos);
-            /*var post = $scope.tableParams.getGridParam("postData");
-            if (angular.toJson(post.filtros) != angular.toJson(JSON.stringify($scope.datos))) {
-                $scope.totalGrilla = 0;
-            }*/
-
-            $scope.tableParams.setGridParam({
-                postData: {
-                    filtros: angular.toJson($scope.datos),
-                    //total: $scope.totalGrilla
-                }
-            });
-            $scope.tableParams.setGridParam({
-                datatype: "json",
-                page: "1"
-            });
-            $scope.tableParams.reloadGrid();
+            $scope.tableParams.addRowData(0,{});
         };
     }
 ]);

@@ -10,7 +10,6 @@
 .ui-jqgrid .ui-jqgrid-hdiv,
 .table .ui-jqgrid-btable{
     width: 100% !important;
-    color: #5E740B;
 }
 
 .ui-jqgrid .ui-pager-control {
@@ -35,4 +34,8 @@
 
 .x-navigation li>a:hover{
     background: #32333C;
+}
+
+.page-content{
+    height: 100% !important;
 }
